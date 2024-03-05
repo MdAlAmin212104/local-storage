@@ -8,6 +8,7 @@ const handleClick = ()=>{
       productName.value = '';
       ProductQuantity.value = '';
       elementDisplay(name, quantity);
+      saveProductToLocalStorage(name, quantity);
 }
 
 const elementDisplay = (name, quantity)=>{
@@ -25,6 +26,9 @@ const getStoragesShoppingCart = ()=>{
 }
 
 const saveProductToLocalStorage = (product, quantity)=>{
-
+      const cart = getStoragesShoppingCart();
+      cart[product] = quantity;
+      const cartStringified = JSON.stringify(cart);
+      console.log(cartStringified);
 
 }
