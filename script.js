@@ -32,3 +32,11 @@ const saveProductToLocalStorage = (product, quantity)=>{
       localStorage.setItem('cart', cartStringified)
 
 }
+const displayFromLocalStorage = ()=>{
+      const saveElement = getStoragesShoppingCart()
+      for(const product in saveElement){
+            const quantity = saveElement[product];
+            elementDisplay(product, quantity);
+      }
+}
+displayFromLocalStorage()
